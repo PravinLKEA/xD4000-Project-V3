@@ -1,0 +1,35 @@
+model,reference,code,name,address,datatype,scale,default,min,max,unit,access,monitor,write_protect,notes
+XD4000,ALL,ADD,Device Modbus address,6001,uint16,1,0,0,247,,RW,FALSE,TRUE,Locked from write in normal mode.
+XD4000,ALL,TTO,Modbus timeout,6005,uint16,0.1,10.0,0.1,30.0,s,RW,FALSE,FALSE,Safe write-test parameter.
+XD4000,ALL,M1EC,Modbus network CRC errors,6010,uint16,1,0,0,65535,frames,RO,TRUE,TRUE,Modbus diagnostic counter.
+XD4000,ALL,M1CT,Modbus frame number,6011,uint16,1,0,0,65535,frames,RO,TRUE,TRUE,Modbus frame counter.
+XD4000,ALL,ETA,Status register,3201,uint16,1,0,0,65535,,RO,TRUE,TRUE,Status word.
+XD4000,ALL,RFR,Motor frequency,3202,int16,0.1,0,-3276.7,3276.7,Hz,RO,TRUE,TRUE,Actual output frequency.
+XD4000,ALL,FRH,Reference frequency before ramp,3203,int16,0.1,0,-599.0,599.0,Hz,RO,TRUE,TRUE,Pre-ramp reference.
+XD4000,ALL,LCR,Motor current,3204,uint16,1,0,0,65535,raw,RO,TRUE,TRUE,Raw current; scaling to validate later.
+XD4000,ALL,OTR,Motor torque,3205,int16,0.1,0,-3276.7,3276.7,%,RO,TRUE,TRUE,Motor torque.
+XD4000,ALL,ETI,Internal state register,3206,uint16,1,0,0,65535,,RO,TRUE,TRUE,Internal state word.
+XD4000,ALL,ULN,Mains voltage,3207,uint16,0.1,0,0,6553.5,V,RO,TRUE,TRUE,Mains voltage.
+XD4000,ALL,UOP,Motor voltage,3208,uint16,1,0,0,65535,V,RO,TRUE,TRUE,Motor voltage.
+XD4000,ALL,THD,Drive thermal state,3209,uint16,1,0,0,200,%,RO,TRUE,TRUE,Drive thermal state.
+XD4000,ALL,OPR,Motor power,3211,int16,1,0,-32767,32767,%,RO,TRUE,TRUE,Motor power.
+XD4000,ALL,HMIS,Device state,3240,uint16,1,0,0,65535,,RO,TRUE,TRUE,Device state.
+XD4000,ALL,VBUS,DC bus voltage,3243,uint16,0.1,0,0,6553.5,V,RO,TRUE,TRUE,DC bus voltage.
+XD4000,ALL,CNFS,Active configuration,8020,uint16,1,0,0,65535,,RO,TRUE,TRUE,Active configuration.
+XD4000,ALL,CRC,Active reference channel,8441,uint16,1,0,0,65535,,RO,TRUE,TRUE,BitString16; bit 11 = Embedded Ethernet / Modbus TCP reference.
+XD4000,ALL,CCC,Active command channel,8442,uint16,1,0,0,65535,,RO,TRUE,TRUE,BitString16; bit 11 = Embedded Ethernet / Modbus TCP command.
+XD4000,ALL,LFT,Last error occurred,7121,uint16,1,0,0,65535,,RO,TRUE,TRUE,Last drive error/fault code.
+XD4000,ALL,THR,Motor thermal state,9630,uint16,1,0,0,200,%,RO,TRUE,TRUE,Motor thermal state.
+XD4000,ALL,CMD,Command register,8501,uint16,1,0,0,65535,,RW,FALSE,TRUE,Locked. Raw command writes disabled.
+XD4000,ALL,LFR,Reference frequency,8502,int16,0.1,0,-599.0,599.0,Hz,RW,FALSE,FALSE,Reference frequency; safe bench use only.
+XD4000,ALL,RFRD,Output velocity,8604,int16,1,0,-32767,32767,rpm,RO,TRUE,TRUE,Output speed.
+XD4000,ALL,FRHD,Speed reference before ramp,8605,int16,1,0,-32767,32767,rpm,RO,TRUE,TRUE,Speed reference before ramp.
+XD4000,ALL,ERRD,CiA402 fault code,8606,uint16,1,0,0,65535,,RO,TRUE,TRUE,Fault code.
+XD4000,ALL,COM1,Modbus communication status,64047,uint16,1,0,0,65535,,RO,TRUE,TRUE,Modbus communication status.
+XD4000,ALL,ETHL,Ethernet error response,7021,uint16,1,0,0,65535,,RO,TRUE,TRUE,Ethernet error response / behavior. Read-only in this build.
+XD4000,ALL,ETHF,Embedded Ethernet fault,7136,uint16,1,0,0,65535,,RO,TRUE,TRUE,Embedded Ethernet fault information.
+XD4000,ALL,TTOB,Embedded Ethernet timeout,64415,uint16,0.1,10.0,0.1,30.0,s,RO,TRUE,TRUE,Embedded Ethernet timeout. Read-only in this build.
+XD4000,ALL,FR1,Reference source 1,8413,uint16,1,0,0,65535,,RO,TRUE,TRUE,Reference source configuration. Read-only diagnostic in this build.
+XD4000,ALL,CHCF,Channel configuration,8401,uint16,1,0,0,65535,,RO,TRUE,TRUE,Command/reference channel configuration. Read-only diagnostic.
+XD4000,ALL,CD1,Command source 1,8423,uint16,1,0,0,65535,,RO,TRUE,TRUE,Command source 1 configuration. Read-only diagnostic.
+XD4000,ALL,CD2,Command source 2,8424,uint16,1,0,0,65535,,RO,TRUE,TRUE,Command source 2 configuration. Read-only diagnostic.
